@@ -13,6 +13,7 @@
 		2DCF4E1121A6DED400079D3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF4E1021A6DED400079D3C /* Assets.xcassets */; };
 		2DCF4E1421A6DED400079D3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DCF4E1221A6DED400079D3C /* LaunchScreen.storyboard */; };
 		2DCF4E1721A6DED400079D3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DCF4E1621A6DED400079D3C /* main.m */; };
+		71BA7D8E21A6F8CF00CE42AB /* FSViewToImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 71BA7D8D21A6F8CF00CE42AB /* FSViewToImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		2DCF4E1321A6DED400079D3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DCF4E1521A6DED400079D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2DCF4E1621A6DED400079D3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71BA7D8C21A6F8CF00CE42AB /* FSViewToImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSViewToImage.h; sourceTree = "<group>"; };
+		71BA7D8D21A6F8CF00CE42AB /* FSViewToImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSViewToImage.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		2DCF4E0621A6DED100079D3C /* FSViewToImage */ = {
 			isa = PBXGroup;
 			children = (
+				71BA7D8B21A6F8BE00CE42AB /* Classes */,
 				2DCF4E0721A6DED100079D3C /* AppDelegate.h */,
 				2DCF4E0821A6DED100079D3C /* AppDelegate.m */,
 				2DCF4E0A21A6DED100079D3C /* ViewController.h */,
@@ -70,6 +74,15 @@
 			);
 			path = FSViewToImage;
 			sourceTree = "<group>";
+		};
+		71BA7D8B21A6F8BE00CE42AB /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				71BA7D8C21A6F8CF00CE42AB /* FSViewToImage.h */,
+				71BA7D8D21A6F8CF00CE42AB /* FSViewToImage.m */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -141,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71BA7D8E21A6F8CF00CE42AB /* FSViewToImage.m in Sources */,
 				2DCF4E0C21A6DED100079D3C /* ViewController.m in Sources */,
 				2DCF4E1721A6DED400079D3C /* main.m in Sources */,
 				2DCF4E0921A6DED100079D3C /* AppDelegate.m in Sources */,
