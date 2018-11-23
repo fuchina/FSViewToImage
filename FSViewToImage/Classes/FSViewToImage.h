@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)imageForUIView:(nonnull UIView *)view;
 
+// 屏幕截图
++ (UIImage *)screenShot;
+
 @end
 
 NS_ASSUME_NONNULL_END

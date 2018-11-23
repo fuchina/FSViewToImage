@@ -10,7 +10,7 @@
 
 @implementation FSViewToImage
 
-+ (UIImage*)imageForUIView:(nonnull UIView *)view{
++ (UIImage *)imageForUIView:(nonnull UIView *)view{
     CGSize size = view.bounds.size;
     CGRect savedFrame = view.frame;
     if ([view isKindOfClass:UIScrollView.class]) {
@@ -27,6 +27,11 @@
     
     view.frame = savedFrame;
     return image;
+}
+
++ (UIImage *)screenShot{
+    UIView *view = UIApplication.sharedApplication.delegate.window;
+    return [self imageForUIView:view];
 }
 
 @end

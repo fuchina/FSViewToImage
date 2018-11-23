@@ -28,7 +28,7 @@
     [v addGestureRecognizer:tap];
     
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 150, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height - 140)];
-    scrollView.backgroundColor = UIColor.blueColor;
+    scrollView.backgroundColor = UIColor.lightGrayColor;
     [self.view addSubview:scrollView];
     _scrollView = scrollView;
     
@@ -39,7 +39,8 @@
 }
 
 - (void)click{
-    UIImage *image = [FSViewToImage imageForUIView:_scrollView];
+//    UIImage *image = [FSViewToImage imageForUIView:_scrollView];
+    UIImage *image = [FSViewToImage screenShot];
     if (image) {
         NSData *data = UIImagePNGRepresentation(image);
         NSString *png = [[NSString alloc] initWithFormat:@"/Users/fudongdong/Desktop/FSViewToImageTest/%@*%@_vti.png",@(image.size.width),@(image.size.height)];
