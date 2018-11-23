@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name         = "FSLogVisible"
+  s.name         = "FSViewToImage"
   s.version      = "0.0.1"
-  s.summary      = "A short description of FSLogVisible."
+  s.summary      = "A short description of FSViewToImage."
   s.description  = <<-DESC
 	将视图转化为图片的工具类,a tool to change UIView to Image.
                    DESC
