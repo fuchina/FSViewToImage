@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FSViewToImage : NSObject
 
-+ (UIImage *)imageForUIView:(UIView*)view;
++ (UIImage *)imageForUIView:(nonnull UIView *)view;
 
 @end
 
