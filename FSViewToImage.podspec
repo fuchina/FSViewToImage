@@ -9,7 +9,8 @@ Pod::Spec.new do |s|
   s.license      = "MIT (example)"
   s.author             = { "fudongdong" => "1245102331@qq.com" }
   s.platform     = :ios, "8.0"
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
+  s.source_files = 'FSViewToImage/FSViewToImage/Classes/*'
   s.requires_arc = true
+  s.frameworks = 'UIKit'
 
 end
