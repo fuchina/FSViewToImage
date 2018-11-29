@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FSViewToImage"
-  s.version      = "0.0.3"
+  s.version      = "0.0.5"
   s.summary      = "FSViewToImage,make view to image"
   s.homepage         = 'https://github.com/fuchina/FSViewToImage'
   s.description  = <<-DESC
