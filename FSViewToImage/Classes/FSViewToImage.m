@@ -35,7 +35,7 @@
 + (UIImage *)screenShot{
     UIApplication *app = [UIApplication sharedApplication];
     UIView *statusBar = [app valueForKey:@"_statusBar"];
-    NSAssert(statusBar != nil, @"获取状态栏失败");
+//    NSAssert(statusBar != nil, @"获取状态栏失败");
     UIImage *image1 = [self imageForUIView:statusBar];
     UIImage *image2 = [self screenShotApple];
     
