@@ -7,33 +7,12 @@
 //
 
 #import "FSViewToImage.h"
+#import "FSUIKit.h"
 
 @implementation FSViewToImage
 
 + (UIImage *)imageForUIView:(nonnull UIView *)view {
-    if (!view) {
-        return nil;
-    }
-    
-    CGSize size = view.bounds.size;
-    CGRect savedFrame = view.frame;
-    BOOL isScrollView = [view isKindOfClass:UIScrollView.class];
-    if (isScrollView) {
-        UIScrollView *sView = (UIScrollView *)view;
-        size = CGSizeMake(sView.frame.size.width,sView.contentSize.height + sView.contentInset.top + sView.contentInset.bottom);
-        view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, size.width, size.height);
-    }
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-    CGContextRef currnetContext = UIGraphicsGetCurrentContext();
-    [view.layer renderInContext:currnetContext];
-    
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    if (isScrollView) {
-        view.frame = savedFrame;
-    }
-    return image;
+    return [FSUIKit imageForUIView:view];
 }
 
 + (UIImage *)screenShot {
