@@ -10,7 +10,7 @@
 
 @implementation FSViewToImage
 
-+ (UIImage *)imageForUIView:(nonnull UIView *)view{
++ (UIImage *)imageForUIView:(nonnull UIView *)view {
     CGSize size = view.bounds.size;
     CGRect savedFrame = view.frame;
     BOOL isScrollView = [view isKindOfClass:UIScrollView.class];
@@ -32,7 +32,7 @@
     return image;
 }
 
-+ (UIImage *)screenShot{
++ (UIImage *)screenShot {
     UIApplication *app = [UIApplication sharedApplication];
     UIView *statusBar = [app valueForKey:@"_statusBar"];
 //    NSAssert(statusBar != nil, @"获取状态栏失败");
@@ -47,7 +47,7 @@
     return [self imageForUIView:imageView];
 }
 
-+ (UIImage *)screenShotApple{
++ (UIImage *)screenShotApple {
     CGSize imageSize = [[UIScreen mainScreen] bounds].size;
     UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
