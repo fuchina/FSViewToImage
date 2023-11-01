@@ -11,6 +11,10 @@
 @implementation FSViewToImage
 
 + (UIImage *)imageForUIView:(nonnull UIView *)view {
+    if (!view) {
+        return nil;
+    }
+    
     CGSize size = view.bounds.size;
     CGRect savedFrame = view.frame;
     BOOL isScrollView = [view isKindOfClass:UIScrollView.class];
