@@ -12,7 +12,7 @@
 @implementation FSViewToImage
 
 + (UIImage *)imageForUIView:(nonnull UIView *)view {
-    return [FSUIKit imageForUIView:view];
+    return [FSImage imageForUIView:view];
 }
 
 + (UIImage *)screenShot {
