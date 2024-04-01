@@ -11,6 +11,9 @@ Pod::Spec.new do |s|
   s.author             = { "fudongdong" => "1245102331@qq.com" }
   s.platform     = :ios, "8.0"
   s.source           = { :git => 'https://github.com/fuchina/FSViewToImage.git', :tag => s.version.to_s }
+  
+  s.ios.deployment_target = '12.0'
+
   s.source_files = 'FSViewToImage/Classes/*'
   s.requires_arc = true
   s.frameworks = 'UIKit'
