@@ -8,6 +8,7 @@
 
 #import "FSViewToImage.h"
 #import "FSUIKit.h"
+#import "FSKit.h"
 
 @implementation FSViewToImage
 
@@ -35,7 +36,8 @@
     UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
+    UIWindowScene *ws = FSKit.currentWindowScene;
+    for (UIWindow *window in ws.windows) {
         if (![window respondsToSelector:@selector(screen)] || [window screen] == [UIScreen mainScreen]) {
             CGContextSaveGState(context);
             CGContextTranslateCTM(context, [window center].x, [window center].y);
