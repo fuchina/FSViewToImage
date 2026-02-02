@@ -14,7 +14,10 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = '12.0'
 
-  s.source_files = 'FSViewToImage/Classes/*'
+  s.source_files = 'FSViewToImage/Classes/**/*'
+  
+  s.swift_version = '5.9'
+  
   s.requires_arc = true
   s.frameworks = 'UIKit'
 
