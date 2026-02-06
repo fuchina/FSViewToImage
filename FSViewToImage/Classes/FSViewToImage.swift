@@ -25,60 +25,69 @@ public class FSViewToImage {
     public static func screenShot() -> UIImage? {
         // 注意：通过 KVC 获取 _statusBar 在 iOS 13+ 已不可用
         // 这里提供一个兼容方案
-        guard let windowScene = currentWindowScene else { return nil }
-        
-        let screenSize = UIScreen.main.bounds.size
-        UIGraphicsBeginImageContextWithOptions(screenSize, false, 0)
-        defer { UIGraphicsEndImageContext() }
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        
-        for window in windowScene.windows {
-            if window.screen == UIScreen.main {
-                context.saveGState()
-                context.translateBy(x: window.center.x, y: window.center.y)
-                context.concatenate(window.transform)
-                context.translateBy(
-                    x: -window.bounds.size.width * window.layer.anchorPoint.x,
-                    y: -window.bounds.size.height * window.layer.anchorPoint.y
-                )
-                window.layer.render(in: context)
-                context.restoreGState()
+        if #available(iOS 13.0, *) {
+            guard let windowScene = currentWindowScene else { return nil }
+            
+            let screenSize = UIScreen.main.bounds.size
+            UIGraphicsBeginImageContextWithOptions(screenSize, false, 0)
+            defer { UIGraphicsEndImageContext() }
+            
+            guard let context = UIGraphicsGetCurrentContext() else { return nil }
+            
+            for window in windowScene.windows {
+                if window.screen == UIScreen.main {
+                    context.saveGState()
+                    context.translateBy(x: window.center.x, y: window.center.y)
+                    context.concatenate(window.transform)
+                    context.translateBy(
+                        x: -window.bounds.size.width * window.layer.anchorPoint.x,
+                        y: -window.bounds.size.height * window.layer.anchorPoint.y
+                    )
+                    window.layer.render(in: context)
+                    context.restoreGState()
+                }
             }
+            
+            return UIGraphicsGetImageFromCurrentImageContext()
         }
         
-        return UIGraphicsGetImageFromCurrentImageContext()
+        return nil
     }
     
     /// 屏幕截图（不包含状态栏的私有 API 访问）
     public static func screenShotApple() -> UIImage? {
-        guard let windowScene = currentWindowScene else { return nil }
-        
-        let imageSize = UIScreen.main.bounds.size
-        UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
-        defer { UIGraphicsEndImageContext() }
-        
-        guard let context = UIGraphicsGetCurrentContext() else { return nil }
-        
-        for window in windowScene.windows {
-            if window.screen == UIScreen.main {
-                context.saveGState()
-                context.translateBy(x: window.center.x, y: window.center.y)
-                context.concatenate(window.transform)
-                context.translateBy(
-                    x: -window.bounds.size.width * window.layer.anchorPoint.x,
-                    y: -window.bounds.size.height * window.layer.anchorPoint.y
-                )
-                window.layer.render(in: context)
-                context.restoreGState()
+        if #available(iOS 13.0, *) {
+            guard let windowScene = currentWindowScene else { return nil }
+            
+            let imageSize = UIScreen.main.bounds.size
+            UIGraphicsBeginImageContextWithOptions(imageSize, false, 0)
+            defer { UIGraphicsEndImageContext() }
+            
+            guard let context = UIGraphicsGetCurrentContext() else { return nil }
+            
+            for window in windowScene.windows {
+                if window.screen == UIScreen.main {
+                    context.saveGState()
+                    context.translateBy(x: window.center.x, y: window.center.y)
+                    context.concatenate(window.transform)
+                    context.translateBy(
+                        x: -window.bounds.size.width * window.layer.anchorPoint.x,
+                        y: -window.bounds.size.height * window.layer.anchorPoint.y
+                    )
+                    window.layer.render(in: context)
+                    context.restoreGState()
+                }
             }
+            
+            return UIGraphicsGetImageFromCurrentImageContext()
         }
         
-        return UIGraphicsGetImageFromCurrentImageContext()
+        return nil
     }
     
     // MARK: - Private
     
+    @available(iOS 13.0, *)
     private static var currentWindowScene: UIWindowScene? {
         UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
