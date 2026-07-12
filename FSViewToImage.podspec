@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source           = { :git => 'https://github.com/fuchina/FSViewToImage.git', :tag => s.version.to_s }
   
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '18.0'
 
   s.source_files = 'FSViewToImage/Classes/**/*'
   
